@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الجدار المستدام – موقع المشروع</title>
+<style>
+:root{--bg:#eef6f2;--card:#fff;--ink:#0d2b24;--sub:#4b6a60;--g:#1f8a4c;--g2:#d8f0e1;--r:#c8482b;--r2:#fbe3dc;--b:#1a6fb0;--b2:#dcecf8;--warn:#fff3d6;--wb:#e29a2b;--line:#cfe0d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a17;--card:#13282a;--ink:#e6f4ee;--sub:#9fc2b5;--g:#4cc57c;--g2:#1b3a30;--r:#ff8a6b;--r2:#3a1f1a;--b:#6bb7f0;--b2:#16303f;--warn:#3a2f14;--wb:#e0a640;--line:#244640}}
+:root[data-theme="dark"]{--bg:#0b1a17;--card:#13282a;--ink:#e6f4ee;--sub:#9fc2b5;--g:#4cc57c;--g2:#1b3a30;--r:#ff8a6b;--r2:#3a1f1a;--b:#6bb7f0;--b2:#16303f;--warn:#3a2f14;--wb:#e0a640;--line:#244640}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.95}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+nav a{white-space:nowrap;color:var(--ink);text-decoration:none;padding:4px 12px;border-radius:20px;font-size:.88rem}
+nav a:hover{background:var(--g2)}
+.w{max-width:900px;margin:auto;padding:16px}
+.hero{background:linear-gradient(180deg,#0a4a7a,#1479a8 55%,#1fa6b8);color:#fff;border-radius:24px;padding:36px 22px 84px;text-align:center;position:relative;overflow:hidden}
+.hero h1{margin:0;font-size:clamp(2rem,7vw,3.2rem)}
+.hero p{margin:8px auto 0;max-width:620px;opacity:.96}
+.tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:2px 14px;font-size:.85rem;margin:4px 3px}
+.hero>*{position:relative;z-index:1}.hero>.deco{position:absolute;z-index:0;pointer-events:none}
+.wave{left:0;bottom:-1px;width:200%;height:60px;animation:wv 9s linear infinite}
+.wave.b{height:46px;opacity:.5;animation-duration:15s;animation-direction:reverse}
+@keyframes wv{to{transform:translateX(-50%)}}
+.fish{top:28%;font-size:1.9rem;animation:swim 16s linear infinite}
+.fish.f2{top:60%;font-size:1.3rem;animation-duration:23s;animation-delay:-9s}
+@keyframes swim{from{right:-14%}to{right:114%}}
+.bub{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);bottom:-12px;animation:rise 7s linear infinite}
+@keyframes rise{to{transform:translateY(-280px);opacity:0}}
+.floor{text-align:center;font-size:1.8rem;letter-spacing:8px;padding:30px 0 6px;margin-top:26px;border-radius:18px 18px 0 0;background:linear-gradient(180deg,transparent,#e3d2a2)}
+@media (prefers-reduced-motion:reduce){.deco{animation:none!important}}
+section{margin:26px 0}
+h2{margin:0 0 10px;font-size:1.45rem;border-right:7px solid var(--g);padding-right:12px}
+.card{background:var(--card);border-radius:18px;padding:18px 20px;box-shadow:0 1px 8px rgba(0,0,0,.07);margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.stat{background:var(--g2);border-radius:16px;padding:14px;text-align:center}
+.stat b{display:block;font-size:2rem;color:var(--g);line-height:1.3}
+.chain{display:flex;flex-direction:column;gap:0;align-items:stretch}
+.step{border-radius:16px;padding:12px 16px;display:flex;gap:12px;align-items:center}
+.step i{font-style:normal;font-size:1.7rem}
+.arrow{text-align:center;font-size:1.3rem;color:var(--sub);line-height:1.2}
+.s1{background:var(--r2)}.s2{background:var(--warn)}.s3{background:var(--b2)}.s4{background:var(--r2)}.s5{background:var(--g2);border:2px solid var(--g)}
+.bar{height:26px;border-radius:13px;background:var(--line);overflow:hidden;margin:4px 0 12px;direction:ltr}
+.bar i{display:block;height:100%;width:0;background:var(--g);color:#fff;font-style:normal;font-size:.8rem;padding:0 10px;line-height:26px;white-space:nowrap;transition:width 1.4s ease}
+.bar i.r{background:var(--r)}.bar i.b{background:var(--b)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
+label{font-weight:600}
+input[type=range]{width:100%;accent-color:var(--g)}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.out div{background:var(--g2);border-radius:14px;padding:10px;text-align:center}
+.out b{display:block;font-size:1.6rem;color:var(--g)}
+.btn{display:inline-block;background:var(--g);color:#fff;text-decoration:none;border-radius:14px;padding:10px 20px;font-weight:600}
+.warn{background:var(--warn);border-right:6px solid var(--wb);border-radius:12px;padding:10px 14px}
+ul{padding-right:20px;margin:6px 0}
+.sm{color:var(--sub);font-size:.88rem}
+footer{text-align:center;color:var(--sub);font-size:.9rem;margin:26px 0 8px}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bar i{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav id="nav"><a href="#problem">المشكلة</a><a href="#chain">سلسلة الأثر</a><a href="#solution">الحل</a><a href="#numbers">الأرقام</a><a href="#calc">الحاسبة</a><a href="#model">المجسّم</a><a href="#limits">الحدود</a></nav>
+<div class="w">
+<div class="hero rv"><svg class="deco wave b" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 20Q150 50 300 20T600 20T900 20T1200 20V60H0Z" style="fill:var(--bg)"/></svg><svg class="deco wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30Q150 0 300 30T600 30T900 30T1200 30V60H0Z" style="fill:var(--bg)"/></svg><span class="deco fish">🐠</span><span class="deco fish f2">🐟</span><span class="deco bub" style="left:8%"></span><span class="deco bub" style="left:24%;animation-delay:-3s;width:7px;height:7px"></span><span class="deco bub" style="left:47%;animation-delay:-5s"></span><span class="deco bub" style="left:68%;animation-delay:-1.5s;width:14px;height:14px"></span><span class="deco bub" style="left:90%;animation-delay:-4s;width:8px;height:8px"></span><h1>♻️ الجدار المستدام</h1>
+<p>جدار أخضر ذكي في قلب المدينة يمتص ثاني أكسيد الكربون، فيخفف الاحتباس الحراري وحموضة المحيط، ويحمي الأسماك والشعاب المرجانية.</p>
+<p style="font-weight:700;font-size:1.15rem;margin-top:14px">إعداد الطالبة: سافانا معاذ القريشي</p><p style="margin-top:0;font-size:.95rem">الصف ١\٣ · المتوسطة الثانية عشر</p><div><span class="tag">Sustainable Wall</span><span class="tag">وسط المدينة</span><span class="tag">طاقة شمسية</span></div></div>
+
+<section id="problem" class="rv"><h2>المشكلة: ثاني أكسيد الكربون يضرّ البحر مرتين</h2>
+<div class="grid">
+<div class="stat"><b data-n="27" data-s="%">0</b>تقريبًا من انبعاثات CO₂ يمتصها المحيط (25–30%)</div>
+<div class="stat"><b data-n="30" data-s="%">0</b>زيادة تقريبية في حموضة سطح المحيط</div>
+<div class="stat"><b data-n="90" data-s="%">0</b>تقريبًا من الحرارة الزائدة تمتصها المحيطات</div>
+<div class="stat"><b data-n="50" data-s="%">0</b>تقريبًا زيادة تكرار موجات الحر البحرية خلال عقد</div>
+</div>
+<div class="card"><b>١) التحمّض.</b> يذوب CO₂ في ماء البحر فيكوّن حمض الكربونيك، فينخفض pH من نحو 8.2 إلى 8.1، وتصعب على الشعاب والمحار عملية بناء الهياكل والأصداف.</div>
+<div class="card"><b>٢) الاحتباس الحراري.</b> يحبس CO₂ الحرارة في الغلاف الجوي، والمحيطات تمتص نحو 90% من هذه الحرارة الزائدة، فترتفع حرارة البحار ويزداد حدوث موجات الحر البحرية.</div></section>
+
+<section id="chain" class="rv"><h2>كيف يصل ارتفاع حرارة البحار إلى الأسماك؟</h2>
+<div class="chain">
+<div class="step s1"><i>🏭</i><div><b>ارتفاع انبعاثات CO₂</b><br>من السيارات والمصانع وحرق الوقود.</div></div><div class="arrow">⬇</div>
+<div class="step s2"><i>🌡️</i><div><b>احتباس حراري</b><br>ترتفع حرارة الغلاف الجوي لأن CO₂ يحبس الحرارة.</div></div><div class="arrow">⬇</div>
+<div class="step s3"><i>🌊</i><div><b>ارتفاع حرارة البحار</b><br>تمتص المحيطات نحو 90% من الحرارة الزائدة وتكثر موجات الحر البحرية.</div></div><div class="arrow">⬇</div>
+<div class="step s4"><i>🐟</i><div><b>خطر على الأسماك والشعاب</b><br>تهاجر الأسماك نحو مياه أبرد أو أعمق، وقد تموت أعداد كبيرة محليًا، ويزداد خطر انقراض الأنواع الحساسة.</div></div><div class="arrow">⬇</div>
+<div class="step s5"><i>🌿</i><div><b>دور مشروعنا</b><br>الجدار يمتص CO₂ من هواء المدينة، فيقلل ما يضاف إلى الاحتباس الحراري، وبالتالي يخفف الضغط على حرارة البحار والأسماك.</div></div>
+</div></section>
+
+<section id="solution" class="rv"><h2>الحل: الجدار المستدام</h2>
+<div class="grid">
+<div class="card"><b>🌱 جدار أخضر حي</b><br>تمتص نباتاته CO₂ بالتمثيل الضوئي وتنتج الأكسجين وتبرّد الواجهة.</div>
+<div class="card"><b>☀️ ألواح شمسية</b><br>تشغّل الري والشاشة بطاقة نظيفة.</div>
+<div class="card"><b>💧 ري وحساسات ذكية</b><br>توفر الماء وتراقب رطوبة التربة.</div>
+<div class="card"><b>📟 شاشة ذكية</b><br>تعرض كمية CO₂ المُزالة لتوعية المارة.</div>
+</div>
+<div class="card">🧪 <b>تطوير مستقبلي:</b> إضافة أنابيب طحالب دقيقة. تشير دراسة لواجهة حقيقية في إسبانيا إلى تثبيت نحو 720 كغم CO₂ سنويًا.</div></section>
+
+<section id="numbers" class="rv"><h2>أرقام من الدراسات</h2>
+<div class="card">
+<div>جدار أخضر: 2.3 كغم CO₂ لكل م² سنويًا</div><div class="bar"><i data-w="3" >2.3</i></div>
+<div>واجهة طحالب في إسبانيا (كغم CO₂ سنويًا)</div><div class="bar"><i class="b" data-w="100">720</i></div>
+<div>انخفاض CO₂ في مكتب فيه جدار أخضر</div><div class="bar"><i data-w="14.1">14.1%</i></div>
+<div>انخفاض الغبار الدقيق PM2.5</div><div class="bar"><i data-w="20.9">20.9%</i></div>
+<div>توفير طاقة التبريد</div><div class="bar"><i data-w="13.5">13.5%</i></div>
+<div>زيادة حموضة المحيط منذ عصر ما قبل الصناعة</div><div class="bar"><i class="r" data-w="30">30%</i></div>
+<p class="sm">أرقام تقريبية من دراسات منشورة ومؤسسات علمية، وتختلف حسب المكان والنبات والمناخ.</p></div></section>
+
+<section id="calc" class="rv"><h2>🧮 احسبي أثر الجدار</h2>
+<div class="card"><label for="a">مساحة الجدار الأخضر: <span id="av">20</span> م²</label>
+<input id="a" type="range" min="1" max="500" value="20">
+<div class="out"><div><b id="co">46</b>كغم CO₂ سنويًا</div><div><b id="o2">34</b>كغم أكسجين سنويًا</div><div><b id="eq">313</b>م² تعادل واجهة الطحالب</div></div>
+<p class="sm">الحساب بمتوسط 2.3 كغم CO₂ و1.7 كغم O₂ لكل م² سنويًا.</p></div></section>
+
+<section id="model" class="rv"><h2>🧊 المجسّم ثلاثي الأبعاد</h2>
+<div class="card"><p>شاهدي الجدار في شارع وسط المدينة، دوّريه وقرّبي منه.</p><a class="btn" href="https://claude.ai/artifact/Sch5Z1aG8w5LfqbwuMahv5" target="_blank" rel="noopener">افتحي المجسّم</a></div></section>
+
+<section id="limits" class="rv"><h2>الأمانة العلمية</h2>
+<div class="warn">الرقم −25 كغم على الشاشة مثال توضيحي. جدار واحد لن يوقف الاحتباس الحراري أو ينقذ الأسماك وحده؛ الأثر الحقيقي يأتي من تعميم الفكرة مع خفض الانبعاثات. وارتفاع حرارة البحار يسبب غالبًا هجرة الأسماك وموتًا محليًا واسعًا، أما الانقراض الكامل فخطر يزداد مع استمرار التسخن. وتثبيت الكربون ليس تخزينًا دائمًا.</div></section>
+
+<div class="floor" aria-hidden="true">🪸🐚🌿⭐🪸🐡🐚🌿</div><footer>إعداد الطالبة: سافانا معاذ القريشي · الصف ١\٣ · المتوسطة الثانية عشر</footer>
+</div>
+<script>
+(function(){
+var a=document.getElementById('a');
+function u(){var v=+a.value;document.getElementById('av').textContent=v;
+document.getElementById('co').textContent=+(v*2.3).toFixed(1);
+document.getElementById('o2').textContent=+(v*1.7).toFixed(1);}
+a.addEventListener('input',u);u();
+document.querySelectorAll('#nav a').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(l.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+function count(el){var n=+el.dataset.n,s=el.dataset.s||'',t0=null;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(n*p)+s;if(p<1)requestAnimationFrame(f);}requestAnimationFrame(f);}
+function show(el){el.classList.add('on');el.querySelectorAll('[data-n]').forEach(count);el.querySelectorAll('[data-w]').forEach(function(b){b.style.width=Math.max(+b.dataset.w,8)+'%';});}
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.15});els.forEach(function(e){io.observe(e);});}
+else els.forEach(show);
+})();
+</script>
+</body>
+</html>
